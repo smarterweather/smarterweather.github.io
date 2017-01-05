@@ -9,7 +9,6 @@ function init()
 
 	autocomplete.addListener('place_changed', function() 
 	{
-	  	displayCoordinates(autocomplete.getPlace());
 	  	analyze(autocomplete.getPlace());
 	});
 }
@@ -17,13 +16,6 @@ function init()
 function UiInit()
 {
 	$(analyzedRadar).hide();
-}
-
-function displayCoordinates(place)
-{
-	// window.alert("Lat: " + place.geometry.location.lat() + ", Lon: " + place.geometry.location.lng())
-	$(lat).text("Latitude: " + place.geometry.location.lat());
-	$(lng).text("Longitude: " + place.geometry.location.lng());
 }
 
 function analyze(place)

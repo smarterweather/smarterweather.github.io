@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Please enter your credentials"
+AuthUserFile smarterweather.com/snapshot/.htpasswd
+Require valid-user

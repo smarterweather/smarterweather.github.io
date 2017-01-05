@@ -19,7 +19,7 @@ function init()
 
 	autocomplete.addListener('place_changed', function() 
 	{
-	  	analyze(autocomplete.getPlace());
+	  	// analyze(autocomplete.getPlace());
 	});
 }
 

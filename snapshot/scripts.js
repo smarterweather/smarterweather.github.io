@@ -43,6 +43,6 @@ function analyze(place)
 
 function analyzeComplete(data)
 {
-	// var json = data;
+	data = $.parseJSON(data);
 	$(analyzedRadar).attr('src', '' + data.analyzedUrl);
 }

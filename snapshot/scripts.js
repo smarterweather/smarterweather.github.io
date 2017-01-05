@@ -1,3 +1,13 @@
+// Initialize Firebase
+var config = {
+	apiKey: "AIzaSyDVGZCsZZI9vX-yHK192I92TC6mtYsFaBQ",
+	authDomain: "horizon-snapshot.firebaseapp.com",
+	databaseURL: "https://horizon-snapshot.firebaseio.com",
+	storageBucket: "horizon-snapshot.appspot.com",
+	messagingSenderId: "396136375791"
+};
+firebase.initializeApp(config);
+
 function init() 
 {
 	var input = document.getElementById('pac-input');

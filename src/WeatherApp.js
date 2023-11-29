@@ -72,8 +72,8 @@ const WeatherApp = () => {
             ) : (
                 <div>
                     <h1>Weather Forecast Discussion</h1>
-                    <p><strong>Issuing Office:</strong> {weatherData.issuingOffice}</p>
-                    <p><strong>Issuance Time:</strong> {weatherData.issuanceTime}</p>
+                    <p><strong>Forecast Office:</strong> {weatherData.issuingOffice}</p>
+                    <p><strong>Last Updated:</strong> {weatherData.issuanceTime}</p>
                     <pre className="product-text">{weatherData.productText}</pre>
                 </div>
             )}

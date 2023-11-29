@@ -1,0 +1,95 @@
+/* HomePage.css */
+.body-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    padding: 10px 10px 10px 40px; /* Make room for the search icon */
+    border: none;
+    border-radius: 5px;
+    width: 300px; /* You might want to adjust this width or make it responsive */
+    font-size: 16px;
+    background-color: white;
+    color: #282c34;
+    flex-grow: 1;
+}
+
+.icon, .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #61dafb;
+    font-size: 20px;
+}
+
+/* Unified button styles for search and location icons */
+.icon-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    color: #61dafb;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px; /* Match the height of your input */
+    width: 40px; /* Square dimensions for the button */
+}
+
+.icon-button:hover {
+    color: #21a1f1;
+}
+
+/* Suggestions container is not shown by default */
+.suggestions-container {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    color: #000;
+    z-index: 1000; /* Should be above other content */
+    border-radius: 0 0 5px 5px; /* Rounded corners on the bottom */
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd; /* Separate items with a line */
+}
+
+.suggestion-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.suggestion-item span {
+    margin-left: 5px;
+}
+
+/* Show suggestions when the input is focused */
+.search-input:focus + .suggestions-container {
+    display: block;
+}

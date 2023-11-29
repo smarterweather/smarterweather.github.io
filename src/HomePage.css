@@ -4,92 +4,76 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px; /* Add some padding for smaller screens */
     background-color: #282c34;
     color: white;
     font-family: 'Arial', sans-serif;
-}
-
-.search-container {
+  }
+  
+  .search-container {
     position: relative;
+    width: 100%; /* Full width of the parent */
+    max-width: 500px; /* Maximum width of the search container */
     display: flex;
+    flex-direction: row; /* Make sure items are in a row */
     align-items: center;
-    gap: 10px;
-}
-
-.search-input {
-    padding: 10px 10px 10px 40px; /* Make room for the search icon */
+    gap: 10px; /* Space between elements */
+  }
+  
+  .search-input {
+    flex-grow: 1; /* Take up available space */
+    padding: 10px 10px 10px 40px; /* Space for the search icon */
     border: none;
     border-radius: 5px;
-    width: 300px; /* You might want to adjust this width or make it responsive */
     font-size: 16px;
     background-color: white;
     color: #282c34;
-    flex-grow: 1;
-}
-
-.icon, .search-icon {
+  }
+  
+  .search-icon {
     position: absolute;
-    left: 10px;
+    left: 12px; /* Adjust based on padding of the input */
     top: 50%;
     transform: translateY(-50%);
     color: #61dafb;
     font-size: 20px;
-}
-
-/* Unified button styles for search and location icons */
-.icon-button {
-    border: none;
+  }
+  
+  .icon-button {
     background: none;
-    padding: 0;
-    cursor: pointer;
-    color: #61dafb;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px; /* Match the height of your input */
-    width: 40px; /* Square dimensions for the button */
-}
-
-.icon-button:hover {
-    color: #21a1f1;
-}
-
-/* Suggestions container is not shown by default */
-.suggestions-container {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    color: #000;
-    z-index: 1000; /* Should be above other content */
-    border-radius: 0 0 5px 5px; /* Rounded corners on the bottom */
-}
-
-.suggestion-item {
+    border: none;
     padding: 10px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #ddd; /* Separate items with a line */
-}
-
-.suggestion-item:last-child {
-    border-bottom: none; /* No border for the last item */
-}
-
-.suggestion-item:hover {
-    background-color: #f0f0f0;
-}
-
-.suggestion-item span {
-    margin-left: 5px;
-}
-
-/* Show suggestions when the input is focused */
-.search-input:focus + .suggestions-container {
-    display: block;
-}
+    color: #61dafb;
+    font-size: 24px; /* Adjust as needed */
+  }
+  
+  /* Use media queries for responsive adjustments */
+  @media (max-width: 768px) {
+    .search-container {
+      flex-direction: row; /* Keep items in a row on small screens */
+      gap: 8px; /* Reduced gap for small screens */
+    }
+  
+    .search-input {
+      order: 1; /* Ensure the input is first */
+      padding-left: 35px; /* Adjust padding to fit the icon */
+      margin-right: 0; /* Remove margin if previously set */
+    }
+  
+    .search-icon {
+      left: 5px; /* Adjust to fit the actual padding of the input */
+    }
+  
+    .icon-button {
+      order: 2; /* Place the search icon button second */
+      margin-top: 0; /* No margin on top */
+    }
+  
+    .location-button {
+      order: 3; /* Place the location button last */
+      font-size: 20px; /* Match the size of the search icon */
+    }
+  }
+  

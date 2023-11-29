@@ -13,7 +13,7 @@
   }
   
   .weather-header {
-    font-size: 2em;
+    font-size: 2em; /* Adjusted via media query for smaller screens */
     margin-bottom: 20px;
   }
   
@@ -29,10 +29,27 @@
     white-space: pre-wrap;
     text-align: left;
     width: 100%;
-    max-width: 800px;
+    max-width: 800px; /* Width is controlled for larger screens, and 100% on smaller screens */
+    overflow-wrap: break-word; /* Ensures that long words are broken and wrapped to the next line */
   }
   
   .loading-error {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Adjusted via media query for smaller screens */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .weather-container {
+      padding: 10px; /* Smaller padding on smaller screens */
+    }
+  
+    .weather-header, .loading-error {
+      font-size: 1.5em; /* Smaller font size for smaller screens */
+    }
+  
+    .weather-content {
+      padding: 15px; /* Smaller padding within the content box */
+      width: calc(100% - 30px);
+    }
   }
   

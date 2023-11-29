@@ -1,0 +1,6 @@
+.product-text {
+    text-align: left; /* Align text to the left */
+    white-space: pre-wrap; /* Allows text to wrap */
+    word-break: break-word; /* Breaks long words */
+    font-size: small;
+}

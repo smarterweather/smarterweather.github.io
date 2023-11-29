@@ -11,9 +11,17 @@ const WeatherApp = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const queryNWS = async (url) => {
+        return await fetch(`${url}`, {
+            headers: {
+                "User-Agent": "smarterweather.com (smarterweather@gmail.com)"
+            }
+        })
+    }
+
     // Function to fetch NWS Office using coordinates
     const fetchNWSOffice = async (latitude, longitude) => {
-        const response = await fetch(`https://api.weather.gov/points/${latitude},${longitude}`);
+        const response = await queryNWS(`https://api.weather.gov/points/${latitude},${longitude}`);
         if (!response.ok) {
             throw new Error('Failed to fetch NWS Office');
         }
@@ -23,13 +31,13 @@ const WeatherApp = () => {
 
     // Function to fetch the latest area forecast discussion
     const fetchForecastDiscussion = async (cwa) => {
-        const response = await fetch(`https://api.weather.gov/products/types/AFD/locations/${cwa}`);
+        const response = await queryNWS(`https://api.weather.gov/products/types/AFD/locations/${cwa}`);
         if (!response.ok) {
             throw new Error('Failed to fetch Forecast Discussion');
         }
         const data = await response.json();
         const latestDiscussionId = data['@graph'][0].id;
-        const forecastResponse = await fetch(`https://api.weather.gov/products/${latestDiscussionId}`);
+        const forecastResponse = await queryNWS(`https://api.weather.gov/products/${latestDiscussionId}`);
         const forecastData = await forecastResponse.json();
         return forecastData;
     };
@@ -55,7 +63,7 @@ const WeatherApp = () => {
         };
 
         fetchData();
-    }, [latitude, longitude]);
+    });
 
     return (
     <div className="weather-container">

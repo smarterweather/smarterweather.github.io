@@ -1,6 +1,38 @@
-.product-text {
-    text-align: left; /* Align text to the left */
-    white-space: pre-wrap; /* Allows text to wrap */
-    word-break: break-word; /* Breaks long words */
-    font-size: small;
-}
+/* WeatherApp.css */
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #282c34;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .weather-header {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .weather-info {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  
+  .weather-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    white-space: pre-wrap;
+    text-align: left;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .loading-error {
+    font-size: 1.5em;
+  }
+  

@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+.app-container {
+  background-color: #282c34; /* Your desired background color */
+  /* Other global styles */
+  text-align: center;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
